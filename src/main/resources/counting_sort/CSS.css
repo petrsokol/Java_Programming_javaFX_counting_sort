@@ -1,0 +1,57 @@
+* {
+    -fx-cBackground: #231F20;
+    -fx-cAccent: #FFF4DE;
+}
+
+
+.root {
+    -fx-background-color: -fx-cBackground;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-cAccent;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 24;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.stackButton {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-cAccent;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 24;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 1;
+}
+
+.stackButton:hover {
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-cAccent;
+}
+
+.button:hover {
+    -fx-background-color: -fx-cAccent;
+    -fx-text-fill: -fx-cBackground;
+    /*-fx-border-color: -fx-cAccent;*/
+}
+
+.gameVBox {
+    -fx-border-color: -fx-cAccent;
+}
+
+.label {
+    -fx-text-fill: -fx-cAccent;
+    -fx-font-family: "Segoe UI Light";
+    -fx-font-size: 24;
+    -fx-font-style: italic;
+}
+
+.button:pressed {
+    -fx-font-family: "Segoe UI Light";
+}
