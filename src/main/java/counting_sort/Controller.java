@@ -89,10 +89,10 @@ public class Controller implements Initializable
 
   /*------------------------------------------------------------------------------------------------------------------*/
 
-  public void randomize ()
+  public void shuffle ()
   {
     ArrayList<Integer> inputData = getData();
-    ArrayList<Integer> randomizedData = Sort.randomize(inputData, 100);
+    ArrayList<Integer> randomizedData = Sort.shuffle(inputData);
     displayData(randomizedData);
   }
 
@@ -153,7 +153,13 @@ public class Controller implements Initializable
     ArrayList<Integer> res = new ArrayList<>(len);
 
     for (String line : lines) {
-      res.add(Integer.parseInt(line.trim()));
+      if (!line.isEmpty()) { // Skip empty lines
+        try {
+          res.add(Integer.parseInt(line)); // Convert to integer
+        } catch (NumberFormatException e) {
+          System.err.println("Skipping invalid line: " + line);
+        }
+      }
     }
     return res;
   }

@@ -1,9 +1,9 @@
 package counting_sort;
 
-import javafx.event.ActionEvent;
-
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Collections;
+
+/*====================================================================================================================*/
 
 public class Sort
 {
@@ -21,8 +21,8 @@ public class Sort
     int min = data.get(0);
     int max = data.get(0);
     for (int num : data) {
-      min = min < num ? min : num;
-      max = max > num ? max : num;
+      min = Math.min(min, num);
+      max = Math.max(max, num);
     }
 
     // prepare count array
@@ -46,7 +46,7 @@ public class Sort
     }
 
     // read backwards and sort into res
-    for (int i = len - 1; i > 0 - 1; --i) {
+    for (int i = len - 1; i > -1; --i) {
       int curr = data.get(i);
       // save the last number to the result vector at index determined by the sum in the count arr
       res.set(count[curr - min] - 1, curr);
@@ -55,11 +55,16 @@ public class Sort
       count[data.get(i) - min]--;
     }
 
-    // print result:
-    for (int i = 0; i < len; ++i)
-      System.out.println(res.get(i));
-
     return res;
+  }
+
+  /*------------------------------------------------------------------------------------------------------------------*/
+
+  public static void swap (ArrayList<Integer> data, int i)
+  {
+    int tmp = data.get(i);
+    data.set(i, data.get(i + 1));
+    data.set(i + 1, tmp);
   }
 
   /*------------------------------------------------------------------------------------------------------------------*/
@@ -67,9 +72,17 @@ public class Sort
   public static ArrayList<Integer> bubbleSort (ArrayList<Integer> data)
   {
     int len = data.size();
-    ArrayList<Integer> res = new ArrayList<>(len);
-
-    return res;
+    boolean isSorted = false;
+    while (!isSorted) {
+      isSorted = true;
+      for (int i = 0; i < len - 1; ++i) {
+        if (data.get(i) > data.get(i + 1)) {
+          isSorted = false;
+          swap(data, i);
+        }
+      }
+    }
+    return data;
   }
 
   /*------------------------------------------------------------------------------------------------------------------*/
@@ -77,27 +90,27 @@ public class Sort
   public static ArrayList<Integer> insertSort (ArrayList<Integer> data)
   {
     int len = data.size();
-    ArrayList<Integer> res = new ArrayList<>(len);
-
-    return res;
-  }
-
-  /*------------------------------------------------------------------------------------------------------------------*/
-
-  public static ArrayList<Integer> randomize (ArrayList<Integer> data, int bound)
-  {
-    int len = data.size();
-    ArrayList<Integer> res = new ArrayList<>(len);
-
-    Random random = new Random();
-    for (int i = 0; i < len; ++i) {
-      res.add(random.nextInt(bound));
+    for (int i = 1; i < len; ++i) {
+      for (int j = i - 1; j >= 0; --j) {
+        if (data.get(j) > data.get(j + 1)) {
+          swap(data, j);
+          continue;
+        }
+        break;
+      }
     }
-
-    return res;
+    return data;
   }
 
   /*------------------------------------------------------------------------------------------------------------------*/
 
-
+  public static ArrayList<Integer> shuffle (ArrayList<Integer> data)
+  {
+    if (data == null)
+      return null;
+    Collections.shuffle(data);
+    return data;
+  }
 }
+
+/*====================================================================================================================*/

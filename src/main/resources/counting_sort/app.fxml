@@ -9,31 +9,27 @@
 <?import javafx.scene.layout.VBox?>
 
 <StackPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="counting_sort.Controller">
-    <children>
-      <BorderPane>
-         <center>
-              <VBox alignment="CENTER">
-               <TextArea fx:id="textAreaData" maxWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" />
-                  <Button maxWidth="1.7976931348623157E308" onAction="#chooseFile" text="choose data" />
-                  <Button maxWidth="1.7976931348623157E308" onAction="#countingSort" text="counting sort" />
-                  <Button maxWidth="1.7976931348623157E308" onAction="#bubbleSort" text="bubble sort" />
-                  <Button maxWidth="1.7976931348623157E308" onAction="#insertSort" text="insert sort" />
-                  <Button maxWidth="1.7976931348623157E308" onAction="#randomize" text="randomize" />
-                  <Button maxWidth="1.7976931348623157E308" onAction="#saveChanges" text="save data" />
-                  <Button maxWidth="1.7976931348623157E308" onAction="#terminateApp" text="we're done here" />
-              </VBox>
-         </center>
-         <bottom>
-            <VBox alignment="BOTTOM_CENTER" BorderPane.alignment="CENTER">
-               <children>
-                     <Label text="hazuka odrazuje " />
-                     <Label text="501383 © 2025" />
-               </children>
-               <BorderPane.margin>
-                  <Insets top="20.0" />
-               </BorderPane.margin>
+    <BorderPane>
+        <center>
+            <VBox alignment="CENTER">
+                <TextArea fx:id="textAreaData" maxWidth="-Infinity" prefHeight="200.0" prefWidth="200.0"/>
+                <Button maxWidth="1.7976931348623157E308" onAction="#chooseFile" text="choose data"/>
+                <Button maxWidth="1.7976931348623157E308" onAction="#countingSort" text="counting sort"/>
+                <Button maxWidth="1.7976931348623157E308" onAction="#bubbleSort" text="bubble sort"/>
+                <Button maxWidth="1.7976931348623157E308" onAction="#insertSort" text="insert sort"/>
+                <Button maxWidth="1.7976931348623157E308" onAction="#shuffle" text="shuffle data"/>
+                <Button maxWidth="1.7976931348623157E308" onAction="#saveChanges" text="save data"/>
+                <Button maxWidth="1.7976931348623157E308" onAction="#terminateApp" text="we're done here"/>
             </VBox>
-         </bottom>
-      </BorderPane>
-    </children>
+        </center>
+        <bottom>
+            <VBox alignment="BOTTOM_CENTER" BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets top="20.0"/>
+                </BorderPane.margin>
+                <Label text="hazuka odrazuje "/>
+                <Label text="501383 © 2025"/>
+            </VBox>
+        </bottom>
+    </BorderPane>
 </StackPane>
