@@ -3,9 +3,12 @@ package counting_sort;
 import javafx.event.ActionEvent;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Sort
 {
+  /*------------------------------------------------------------------------------------------------------------------*/
+
   public static ArrayList<Integer> countingSort (ArrayList<Integer> data)
   {
     // if array is empty or has one element, there is nothing to sort
@@ -58,4 +61,43 @@ public class Sort
 
     return res;
   }
+
+  /*------------------------------------------------------------------------------------------------------------------*/
+
+  public static ArrayList<Integer> bubbleSort (ArrayList<Integer> data)
+  {
+    int len = data.size();
+    ArrayList<Integer> res = new ArrayList<>(len);
+
+    return res;
+  }
+
+  /*------------------------------------------------------------------------------------------------------------------*/
+
+  public static ArrayList<Integer> insertSort (ArrayList<Integer> data)
+  {
+    int len = data.size();
+    ArrayList<Integer> res = new ArrayList<>(len);
+
+    return res;
+  }
+
+  /*------------------------------------------------------------------------------------------------------------------*/
+
+  public static ArrayList<Integer> randomize (ArrayList<Integer> data, int bound)
+  {
+    int len = data.size();
+    ArrayList<Integer> res = new ArrayList<>(len);
+
+    Random random = new Random();
+    for (int i = 0; i < len; ++i) {
+      res.add(random.nextInt(bound));
+    }
+
+    return res;
+  }
+
+  /*------------------------------------------------------------------------------------------------------------------*/
+
+
 }

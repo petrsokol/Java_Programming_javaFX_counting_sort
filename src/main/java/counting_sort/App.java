@@ -51,7 +51,7 @@ public class App extends Application
             case F11, F -> stage.setFullScreen(!stage.isFullScreen());
 
             // sort - does not work - edits the data in dataPane
-            case S -> controller.sortData();
+            case S -> controller.countingSort();
           }
         }
       });

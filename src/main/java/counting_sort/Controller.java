@@ -45,7 +45,14 @@ public class Controller implements Initializable
     ArrayList<Integer> data = new ArrayList<>();
     try (Scanner scanner = new Scanner(file)) {
       while (scanner.hasNextLine()) {
-        data.add(scanner.nextInt());
+        String line = scanner.nextLine().trim(); // Read the line and trim spaces
+        if (!line.isEmpty()) { // Skip empty lines
+          try {
+            data.add(Integer.parseInt(line)); // Convert to integer
+          } catch (NumberFormatException e) {
+            System.err.println("Skipping invalid line: " + line);
+          }
+        }
       }
     } catch (FileNotFoundException e) {
       System.err.println("File not found: " + e.getMessage());
@@ -55,11 +62,38 @@ public class Controller implements Initializable
 
   /*------------------------------------------------------------------------------------------------------------------*/
 
-  public void sortData ()
+  public void countingSort ()
   {
     ArrayList<Integer> inputData = getData();
     ArrayList<Integer> sortedData = Sort.countingSort(inputData);
     displayData(sortedData);
+  }
+
+  /*------------------------------------------------------------------------------------------------------------------*/
+
+  public void bubbleSort ()
+  {
+    ArrayList<Integer> inputData = getData();
+    ArrayList<Integer> sortedData = Sort.bubbleSort(inputData);
+    displayData(sortedData);
+  }
+
+  /*------------------------------------------------------------------------------------------------------------------*/
+
+  public void insertSort ()
+  {
+    ArrayList<Integer> inputData = getData();
+    ArrayList<Integer> sortedData = Sort.insertSort(inputData);
+    displayData(sortedData);
+  }
+
+  /*------------------------------------------------------------------------------------------------------------------*/
+
+  public void randomize ()
+  {
+    ArrayList<Integer> inputData = getData();
+    ArrayList<Integer> randomizedData = Sort.randomize(inputData, 100);
+    displayData(randomizedData);
   }
 
   /*------------------------------------------------------------------------------------------------------------------*/
