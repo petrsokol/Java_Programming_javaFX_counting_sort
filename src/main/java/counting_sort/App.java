@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.stage.Stage;
@@ -18,7 +17,7 @@ public class App extends Application
   }
 
   @Override
-  public void start(Stage stage) throws Exception {
+  public void start(Stage stage) {
     try {
       // formalities
       FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("app.fxml")));
@@ -62,12 +61,12 @@ public class App extends Application
       scene.getStylesheets().add(css);
 
       // add image icon and title
-      // stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("DrakeIcon.png"))));
+      // stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("appIcon.png"))));
       stage.setScene(scene);
-      stage.setTitle("Sorting");
+      stage.setTitle("Sorting App");
 
       // set fullscreen mode
-      stage.setFullScreen(true);
+      stage.setFullScreen(false);
       stage.setFullScreenExitHint("");
       stage.setFullScreenExitKeyCombination(new KeyCodeCombination(KeyCode.K));
 
